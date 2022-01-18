@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="stuaction.Test1234_1">
+      <class name="teacheraction.zymanager4_zycz">
         <methods>
-          <include name="Test1234"/>
-          <include name="tearDown"/>
+          <include name="ketizuManager"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- stuaction.Test1234_1 -->
+      </class> <!-- teacheraction.zymanager4_zycz -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
