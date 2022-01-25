@@ -1,4 +1,4 @@
-package teacheraction;
+package teacheraction.zymanage;
 
 import org.junit.Before;
 import org.junit.After;
@@ -28,11 +28,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * 教师用户-资源管理-课题组管理-更多操作：计算资源强制清空，定位弹窗的成功信息并进行断言
+ * 教师用户-资源管理-课题组管理-更多操作：首先定位更多操作中的按钮是否都存在、点击跟多操作中的按钮，在页面捕获弹窗的操作成功的相关文字
+ * zymanager2_yqcy、zymanager3_sccy、zymanager4_zycz脚本要按顺序执行
  * @author chain
  *
  */
-public class zymanager7_zycz {
+public class zymanager4_zycz {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -69,7 +70,8 @@ public class zymanager7_zycz {
     //课题组管理
     driver.findElement(By.cssSelector(".el-menu-item > span")).click();
     Thread.sleep(2000);
-    //更多操作 悬停   
+    
+    
     {
         WebElement element = driver.findElement(By.cssSelector(".operItem:nth-child(2) span"));
         Actions builder = new Actions(driver);
@@ -77,30 +79,29 @@ public class zymanager7_zycz {
     }
     Thread.sleep(3000);   
     
-//    
-//    boolean res1 = driver.findElement(By.tagName("body")).getText().contains("计算资源锁定");
-//    Assert.assertTrue(res1);
-//    
-//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("计算资源清空");
-//    Assert.assertTrue(res2);
-//        
-//    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("计算资源强制清空");
-//    Assert.assertTrue(res3);
-//    
-//    boolean res4 = driver.findElement(By.tagName("body")).getText().contains("存储资源清空");
-//    Assert.assertTrue(res4);
-//    
-//    boolean res5 = driver.findElement(By.tagName("body")).getText().contains("存储资源强制清空");
-//    Assert.assertTrue(res5);
-//    Thread.sleep(3000);   
+    boolean res1 = driver.findElement(By.tagName("body")).getText().contains("计算资源锁定");
+    Assert.assertTrue(res1);
+    
+    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("计算资源清空");
+    Assert.assertTrue(res2);
         
-    driver.findElement(By.xpath("//li[contains(text(),'计算资源强制清空')]")).click(); //  点击
+    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("计算资源强制清空");
+    Assert.assertTrue(res3);
+    
+    boolean res4 = driver.findElement(By.tagName("body")).getText().contains("存储资源清空");
+    Assert.assertTrue(res4);
+    
+    boolean res5 = driver.findElement(By.tagName("body")).getText().contains("存储资源强制清空");
+    Assert.assertTrue(res5);
+    
+    Thread.sleep(3000);   
+    driver.findElement(By.xpath("//li[contains(text(),'计算资源锁定')]")).click(); //  点击计算资源锁定
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-button:nth-child(2) > span")).click();   //点击确定
     Thread.sleep(3000);
     
     //捕获操作之后弹窗弹出的操作成功的文字
-    boolean res6 = driver.findElement(By.tagName("body")).getText().contains("计算资源强制清空成功");
+    boolean res6 = driver.findElement(By.tagName("body")).getText().contains("计算资源锁定成功");
     Assert.assertTrue(res6);
     
       

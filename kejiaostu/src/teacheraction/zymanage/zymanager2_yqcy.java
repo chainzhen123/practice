@@ -1,4 +1,4 @@
-package teacheraction;
+package teacheraction.zymanage;
 
 import org.junit.Before;
 import org.junit.After;
@@ -28,11 +28,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * 教师用户-资源管理-课题组管理：创建、修改、删除
+ * 教师用户-资源管理-课题组管理：邀请成员
  * @author chain
  *
  */
-public class zymanager1_ketizu {
+public class zymanager2_yqcy {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -118,34 +118,43 @@ public class zymanager1_ketizu {
     driver.navigate().refresh();   //刷新网页，更新云服务器的运行状态
     Thread.sleep(3000);
     
-    //修改
-    driver.findElement(By.cssSelector(".operItem > span")).click();
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(4) .el-input__inner")).clear();
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(4) .el-input__inner")).sendKeys("5");
-    Thread.sleep(2000);
-    //修改
-    driver.findElement(By.cssSelector(".is-plain:nth-child(1)")).click();  
-    Thread.sleep(5000);
-    
-    //修改断言
-    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("5");
-    Assert.assertTrue(res3);
-    
-    //删除
-    driver.findElement(By.cssSelector(".el-button--danger > span")).click();
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-button--default:nth-child(2)")).click();
-    Thread.sleep(2000);
-    
-    //删除后刷新页面
+    {
+        WebElement element = driver.findElement(By.cssSelector(".operItem:nth-child(1) span"));
+        Actions builder = new Actions(driver);
+        builder.moveToElement(element).perform();
+    }
+    Thread.sleep(3000);   
+    driver.findElement(By.xpath("//li[contains(text(),'邀请成员')]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(".el-form-item:nth-child(1) > .el-form-item__content > .el-input > .el-input__inner")).click();
+	Thread.sleep(3000);
+	//选择用户
+	driver.findElement(By.cssSelector(".el-form-item:nth-child(1) > .el-form-item__content > .el-input > .el-input__inner")).sendKeys("zhsan1");
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(".el-form-item:nth-child(2) .el-button > span")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(".el-button--small:nth-child(1) > span")).click();
+	Thread.sleep(5000);
+	
+    //刷新页面
     driver.navigate().refresh();   //刷新网页，更新云服务器的运行状态
     Thread.sleep(3000);
     
-    //删除后断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("laoshideketizu");
-    Assert.assertFalse(res2);
+    {
+        WebElement elementq = driver.findElement(By.cssSelector(".operItem:nth-child(1) span"));
+        Actions builder = new Actions(driver);
+        builder.moveToElement(elementq).perform();
+    }
+    Thread.sleep(3000);
     
+	driver.findElement(By.xpath("//li[contains(text(),'删除成员')]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(".el-button--danger:nth-child(1) > span")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(".el-button:nth-child(2) > span")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector("#projecttema > .el-dialog__wrapper:nth-child(5) .el-dialog__close")).click();
+	Thread.sleep(5000);
+
   }
 }

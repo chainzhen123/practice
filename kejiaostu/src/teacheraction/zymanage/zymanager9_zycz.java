@@ -1,4 +1,4 @@
-package teacheraction;
+package teacheraction.zymanage;
 
 import org.junit.Before;
 import org.junit.After;

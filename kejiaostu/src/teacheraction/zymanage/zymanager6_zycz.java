@@ -1,4 +1,4 @@
-package teacheraction;
+package teacheraction.zymanage;
 
 import org.junit.Before;
 import org.junit.After;
@@ -28,11 +28,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * 教师用户-资源管理-课题组管理-更多操作：存储资源清空，定位弹窗的成功信息并进行断言
+ * 教师用户-资源管理-课题组管理-更多操作：计算资源清空，定位弹窗的成功信息并进行断言
  * @author chain
  *
  */
-public class zymanager8_zycz {
+public class zymanager6_zycz {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -94,13 +94,13 @@ public class zymanager8_zycz {
 //    Assert.assertTrue(res5);
 //    Thread.sleep(3000);   
         
-    driver.findElement(By.xpath("//li[contains(text(),'存储资源清空')]")).click(); //  点击存储资源清空
+    driver.findElement(By.xpath("//li[contains(text(),'计算资源清空')]")).click(); //  点击计算资源清空
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-button:nth-child(2) > span")).click();   //点击确定
     Thread.sleep(3000);
     
     //捕获操作之后弹窗弹出的操作成功的文字
-    boolean res6 = driver.findElement(By.tagName("body")).getText().contains("存储资源清空成功");
+    boolean res6 = driver.findElement(By.tagName("body")).getText().contains("计算资源清空成功");
     Assert.assertTrue(res6);
     
       

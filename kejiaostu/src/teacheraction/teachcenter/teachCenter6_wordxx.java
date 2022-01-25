@@ -1,4 +1,4 @@
-package stuaction.teachcenter;
+package teacheraction.teachcenter;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -26,13 +26,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * 学生角色，【教学中心】-【我的学习】-我的课程、我的云服务器
+ * 教师角色，【教学中心】-【我的学习】-我的课程、我的云服务器
+ * 说明：运行脚本前需要该课程创建一个远程连接（novnc类型）
  * @author chain
  *
  */
-public class teachCenter5_wordxx {
-	
-	
+public class teachCenter6_wordxx {
+		
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -49,19 +49,6 @@ public class teachCenter5_wordxx {
     driver.quit();
   }
    
-  public String waitForWindow(int timeout) {
-    try {
-      Thread.sleep(timeout);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    Set<String> whNow = driver.getWindowHandles();
-    Set<String> whThen = (Set<String>) vars.get("window_handles");
-    if (whNow.size() > whThen.size()) {
-      whNow.removeAll(whThen);
-    }
-    return whNow.iterator().next();
-  }
   
   @Test
   public void jx_wordxx() throws InterruptedException {
@@ -70,17 +57,17 @@ public class teachCenter5_wordxx {
     driver.manage().window().setSize(new Dimension(1410, 864));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();
     Thread.sleep(2000);
        
-    driver.findElement(By.cssSelector(".activestyle > span")).click();   //教学中心
-    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".headertitle > ul:nth-child(3) > li")).click();   //教学中心
+    Thread.sleep(5000);
     driver.findElement(By.cssSelector("label:nth-child(3) span")).click();   //我的学习
     Thread.sleep(2000);
     driver.findElement(By.id("tab-studyMyCloudServer")).click();     //我的云服务器
@@ -91,14 +78,7 @@ public class teachCenter5_wordxx {
     driver.findElement(By.xpath("//span[text()='进入容器']")).click();
     Thread.sleep(2000);
     vars.put("root", driver.getWindowHandle());
-//    driver.switchTo().window(vars.get("win8759").toString());
-//    driver.switchTo().frame(1);
-//    driver.findElement(By.id("noVNC_password_input")).sendKeys("123456");
-//    Thread.sleep(2000);
-//    driver.findElement(By.id("noVNC_password_button")).click();
-//    Thread.sleep(2000);
-//    driver.close();
-//    Thread.sleep(2000);
+
     driver.switchTo().window(vars.get("root").toString());
     Thread.sleep(2000);
     
@@ -132,6 +112,7 @@ public class teachCenter5_wordxx {
     
     
     driver.findElement(By.id("tab-studyMyCloudServer")).click();  //我的云服务器
+    //删除
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-button--danger:nth-child(2) > span")).click();
     Thread.sleep(2000);
