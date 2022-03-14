@@ -34,6 +34,7 @@ public class selfCenter_cloud_xlksh {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -53,7 +54,7 @@ public class selfCenter_cloud_xlksh {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan4");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -93,7 +94,7 @@ public class selfCenter_cloud_xlksh {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(5) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan4']")).click();
     Thread.sleep(2000);
     //文件路径
     driver.findElement(By.cssSelector(".is-plain > span")).click();
@@ -124,15 +125,15 @@ public class selfCenter_cloud_xlksh {
     Thread.sleep(5000);
 
     //修改
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  
-    Thread.sleep(3000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();   
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("xunlian02");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item__content > .el-button--success > span")).click();  //提交修改
-    Thread.sleep(5000);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  
+//    Thread.sleep(3000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();   
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("xunlian02");
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form-item__content > .el-button--success > span")).click();  //提交修改
+//    Thread.sleep(5000);
     
     //修改后断言
 //    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("xunlian02");

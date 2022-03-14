@@ -39,6 +39,7 @@ public class teachCenter1_jhkf {
 
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -54,7 +55,7 @@ public class teachCenter1_jhkf {
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(3000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach01");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
@@ -97,11 +98,11 @@ public class teachCenter1_jhkf {
     Thread.sleep(3000);
     
     {
-      WebElement element = driver.findElement(By.cssSelector(".el-button--success > span"));
+      WebElement element = driver.findElement(By.xpath("//span[contains(text(),'创建云服务器')]"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();          //创建云服务器  悬停
     }
-    Thread.sleep(2000);
+    Thread.sleep(3000);
    
     driver.findElement(By.xpath("//*[text()='交互式开发']")).click();    //  点击交互式开发
     Thread.sleep(2000);
@@ -119,7 +120,7 @@ public class teachCenter1_jhkf {
         
     driver.findElement(By.cssSelector(".el-form-item:nth-child(6) .el-input__inner")).click();   //个人分区
     Thread.sleep(3000);
-    driver.findElement(By.xpath("//*[text()='zhsan1']")).click();  //参考之前的写法
+    driver.findElement(By.xpath("//*[text()='teach01']")).click();  //参考之前的写法
     Thread.sleep(3000);
     
     

@@ -34,6 +34,7 @@ public class selfCenter_yuncc1 {
   
 @BeforeClass
 public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();

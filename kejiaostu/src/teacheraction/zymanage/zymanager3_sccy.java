@@ -39,6 +39,7 @@ public class zymanager3_sccy {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -56,11 +57,11 @@ public class zymanager3_sccy {
     driver.manage().window().setSize(new Dimension(1550, 838));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();    
     Thread.sleep(2000);
@@ -147,7 +148,7 @@ public class zymanager3_sccy {
     }
     Thread.sleep(3000);
     
-	driver.findElement(By.xpath("//li[contains(text(),'删除成员')]")).click();
+	driver.findElement(By.xpath("//li[contains(text(),'删除成员')]")).click();  //此处删除成员是无效操作，删除的是自己
 	Thread.sleep(3000);
 	driver.findElement(By.cssSelector(".el-button--danger:nth-child(1) > span")).click();
 	Thread.sleep(3000);

@@ -39,6 +39,7 @@ public class zymanager1_ketizu {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -56,11 +57,11 @@ public class zymanager1_ketizu {
     driver.manage().window().setSize(new Dimension(1550, 838));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();    
     Thread.sleep(2000);
@@ -100,7 +101,7 @@ public class zymanager1_ketizu {
     driver.findElement(By.cssSelector(".tableleft .el-input__inner")).click();
     Thread.sleep(2000);
     //查询账户
-    driver.findElement(By.cssSelector(".tableleft .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".tableleft .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(2) .el-button > span")).click();
     Thread.sleep(2000);

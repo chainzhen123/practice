@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--教学中心-创建交互式开发、远程连接，检查目录，后续加上报告相关的脚本  -->
+
+<suite thread-count="6" name="教学中心创建交互式开发远程连接、检查目录等" annotations="JDK" parallel="tests">
+  
+  	  	<!-- 1 -->
+  <test  name="zhsan1">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.teachcenter.teachCenter1_jhkf"/>
+	    </classes>
+  </test>
+  
+    	 <!-- 2 -->
+  <test  name="zhsan2">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.teachcenter.teachCenter2_yclj"/>
+	    </classes>
+  </test>
+  
+    	  <!-- 3 -->
+  <test  name="zhsan3">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.teachcenter.teachCenter4_mulu"/>
+	    </classes>
+  </test>
+  
+      	 
+  
+  
+  
+</suite> 

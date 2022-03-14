@@ -31,6 +31,7 @@ import java.net.URL;
 /**
  * 计算中心_训练可视化。验证 创建、修改、删除、启动 按钮
  * 运行脚本前需要准备：学生账号、个人分区及名称、云存储文件路径及名称,各名称要与脚本严格对应
+ * 用户信息：用户/分区/云存储文件路径：  zhsan4/zhsan4/zhsan4
  * @author chain
  *
  */
@@ -42,6 +43,7 @@ public class calCenter_xlksh {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -71,11 +73,11 @@ public class calCenter_xlksh {
   public void xlksh() throws InterruptedException {
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(3000);
-    driver.manage().window().setSize(new Dimension(1110, 670));
+    //driver.manage().window().setSize(new Dimension(1110, 670));
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan4");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -114,7 +116,7 @@ public class calCenter_xlksh {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(5) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan4']")).click();
     Thread.sleep(2000);
     //文件路径
     driver.findElement(By.cssSelector(".is-plain > span")).click();
@@ -143,19 +145,19 @@ public class calCenter_xlksh {
     Assert.assertTrue(res1);  
     
     //修改
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
-    Thread.sleep(2000);
-    //将原有的文本内容清空
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();
-    Thread.sleep(1000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("训练可视化012");
-    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click(); 
-    Thread.sleep(3000);    
-    
-    //修改训练可视化任务断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("训练可视化012");
-    Assert.assertTrue(res2);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
+//    Thread.sleep(2000);
+//    //将原有的文本内容清空
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();
+//    Thread.sleep(1000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("训练可视化012");
+//    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click(); 
+//    Thread.sleep(3000);    
+//    
+//    //修改训练可视化任务断言
+//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("训练可视化012");
+//    Assert.assertTrue(res2);
     
     vars.put("window_handles", driver.getWindowHandles());  
     vars.put("root", driver.getWindowHandle());

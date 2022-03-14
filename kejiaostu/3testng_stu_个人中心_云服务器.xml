@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--此处包含：个人中心-云服务器5种任务和一个我的资源相关的测试，一共6个 
+    注意：zhsan6学生用户要拥有一个分区、一个拥有者身份的课题组、一个加入的课题组，检查页面元素
+ -->
+
+<suite thread-count="6" name="个人中心-云服务器5种任务" annotations="JDK" parallel="tests">
+  
+  	  	<!-- 1 -->
+  <test  name="zhsan1">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.selfcenter.selfCenter_cloud_jhskf"/>
+	    </classes>
+  </test>
+  
+    	 <!-- 2 -->
+  <test  name="zhsan2">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.selfcenter.selfCenter_cloud_kshbc"/>
+	    </classes>
+  </test>
+  
+    	  <!-- 3 -->
+  <test  name="zhsan3">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.selfcenter.selfCenter_cloud_mxbs"/>
+	    </classes>
+  </test>
+  
+      	  <!-- 4 -->
+  <test  name="zhsan4">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.selfcenter.selfCenter_cloud_xlksh"/>
+	    </classes>
+  </test>
+  
+      	  <!-- 5 -->
+  <test  name="zhsan5">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.selfcenter.selfCenter_cloud_yclj"/>
+	    </classes>
+  </test>
+  
+      	  <!-- 6 -->
+  <test  name="zhsan6">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.selfcenter.selCenter_word_ziyuan"/>
+	    </classes>
+  </test>
+  
+  
+  
+</suite> 

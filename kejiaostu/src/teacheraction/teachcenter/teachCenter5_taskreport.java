@@ -34,7 +34,7 @@ import java.net.URL;
 
  /**
   * 科教平台-教师-教学中心-报告与任务：报告--审批、详情、导出文档/文档与报告；任务-创建、提交报告、修改与详情
-  * 注意：该教师需所是选课程的授课老师才可以。
+  * 注意：该教师需是选课程的授课老师才可以。
   * @author chain
   *
   */
@@ -45,6 +45,7 @@ public class teachCenter5_taskreport {
 
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();

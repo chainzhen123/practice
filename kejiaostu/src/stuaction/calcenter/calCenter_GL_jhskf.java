@@ -32,6 +32,7 @@ import java.net.URL;
  * @author chain
  *
  */
+
 public class calCenter_GL_jhskf {
   private WebDriver driver;
   private Map<String, Object> vars;
@@ -39,6 +40,7 @@ public class calCenter_GL_jhskf {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -53,7 +55,7 @@ public class calCenter_GL_jhskf {
   public void gl_jhskf() throws InterruptedException {
   	driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(2000);
-    driver.manage().window().setSize(new Dimension(1936, 1056));
+    //driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
@@ -94,7 +96,7 @@ public class calCenter_GL_jhskf {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(6) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='studefenqu']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
     Thread.sleep(2000);
     //云存储路径
     driver.findElement(By.cssSelector(".is-plain > span")).click();
@@ -124,25 +126,25 @@ public class calCenter_GL_jhskf {
     Assert.assertTrue(res1);
     
     //修改交互式开发
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  //修改    
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();  //清空文本框中的内容
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("jiaohushi01");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();
-    Thread.sleep(5000); 
-    
-    //修改交互式开发断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("jiaohushi01");
-    Assert.assertTrue(res2);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  //修改    
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();  //清空文本框中的内容
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("jiaohushi01");
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();
+//    Thread.sleep(5000); 
+//    
+//    //修改交互式开发断言
+//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("jiaohushi01");
+//    Assert.assertTrue(res2);
     
    //删除
-    driver.findElement(By.cssSelector(".el-button--danger:nth-child(2) > span")).click();
-    Thread.sleep(3000);
-    driver.findElement(By.cssSelector(".el-button--primary:nth-child(2)")).click();
-    Thread.sleep(5000);    
+    driver.findElement(By.cssSelector(".is-plain:nth-child(3) > span")).click();  //删除
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-button--primary:nth-child(2) > span")).click();   //确定
+    Thread.sleep(3000);    
     
     //删除交互式开发断言
     boolean res3 = driver.findElement(By.tagName("body")).getText().contains("jiaohushi01");

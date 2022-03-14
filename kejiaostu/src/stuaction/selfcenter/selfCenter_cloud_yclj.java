@@ -35,6 +35,7 @@ public class selfCenter_cloud_yclj {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -54,7 +55,7 @@ public class selfCenter_cloud_yclj {
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(1000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan5");
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(1000);
@@ -97,7 +98,7 @@ public class selfCenter_cloud_yclj {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(7) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan5']")).click();
     Thread.sleep(2000);
     //选择路径
     driver.findElement(By.cssSelector(".el-button--success")).click();

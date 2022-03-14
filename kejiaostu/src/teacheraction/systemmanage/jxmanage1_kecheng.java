@@ -41,6 +41,7 @@ public class jxmanage1_kecheng {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");  
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -57,9 +58,9 @@ public class jxmanage1_kecheng {
   public void kechcrede() throws InterruptedException {
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach01");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();
     Thread.sleep(2000);
@@ -87,20 +88,21 @@ public class jxmanage1_kecheng {
     driver.findElement(By.cssSelector("#coursemanagement .header .el-button:nth-child(1) > span")).click();
     Thread.sleep(2000);
     
-//    //发布
-//    driver.findElement(By.cssSelector(".el-table_33_column_179 .el-button--primary > span")).click();
-//    Thread.sleep(3000);
-//    //断言
-//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("操作成功");
-//    Assert.assertTrue(res2);
-//    Thread.sleep(2000);
-//    //取消发布
-//    driver.findElement(By.cssSelector(".el-table_33_column_179 .el-button--primary > span")).click();
-//    Thread.sleep(3000);
-//    //断言
-//    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("操作成功");
-//    Assert.assertTrue(res3);
-//    Thread.sleep(2000);
+    //发布
+//    driver.findElement(By.cssSelector(".el-table_1_column_6 .el-button--primary > span")).click();
+    driver.findElement(By.xpath("//span[text()='点击发布']")).click();
+    Thread.sleep(3000);
+    //断言
+    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("操作成功");
+    Assert.assertTrue(res2);
+    Thread.sleep(2000);
+    //取消发布
+    driver.findElement(By.xpath("//span[text()='取消发布']")).click();
+    Thread.sleep(3000);
+    //断言
+    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("操作成功");
+    Assert.assertTrue(res3);
+    Thread.sleep(2000);
     
     //删除
     driver.findElement(By.cssSelector(".el-table_4_column_21 .el-button--danger")).click();

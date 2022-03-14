@@ -39,6 +39,7 @@ public class teachCenter2_yclj {
 
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -58,7 +59,7 @@ public class teachCenter2_yclj {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan2");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -80,7 +81,7 @@ public class teachCenter2_yclj {
     Thread.sleep(3000);
     
     {
-      WebElement element = driver.findElement(By.cssSelector(".el-button--success > span"));
+      WebElement element = driver.findElement(By.cssSelector(".el-dropdown-selfdefine > span"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();          //创建云服务器  悬停
     }
@@ -112,9 +113,9 @@ public class teachCenter2_yclj {
     driver.findElement(By.cssSelector(".el-radio:nth-child(1) > .el-radio__label")).click();    //计算资源来源-个人分区
     Thread.sleep(3000);
     
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(9) .el-input__inner")).click();
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(8) .el-select__caret")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan2']")).click();
     Thread.sleep(2000);
     
     driver.findElement(By.cssSelector(".el-button--success > span")).click();
@@ -125,17 +126,17 @@ public class teachCenter2_yclj {
     Thread.sleep(3000);
     
     //配额
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(12) .el-input__inner")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(12) .el-input__inner")).sendKeys("1");
+    Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(13) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(13) .el-input__inner")).sendKeys("1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(13) .el-input__inner")).sendKeys("0");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(14) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(14) .el-input__inner")).sendKeys("0");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(15) .el-input__inner")).click();
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(15) .el-input__inner")).sendKeys("1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(14) .el-input__inner")).sendKeys("1");
     Thread.sleep(3000);
     driver.findElement(By.cssSelector(".el-button--primary > span")).click();  //创建
     Thread.sleep(8000);

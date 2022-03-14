@@ -34,6 +34,7 @@ public class selfCenter_cloud_jhskf {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -120,22 +121,22 @@ public class selfCenter_cloud_jhskf {
     Thread.sleep(5000);
     
   //修改交互式开发
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  //修改    
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();  //清空文本框中的内容
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("jiaohushi01");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item__content > .el-button--success")).click();
-    Thread.sleep(5000); 
-    
-    //修改交互式开发断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("jiaohushi01");
-    Assert.assertTrue(res2);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  //修改    
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();  //清空文本框中的内容
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("jiaohushi01");
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form-item__content > .el-button--success")).click();
+//    Thread.sleep(5000); 
+//    
+//    //修改交互式开发断言
+//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("jiaohushi01");
+//    Assert.assertTrue(res2);
     
    //删除
-    driver.findElement(By.cssSelector(".el-button--danger:nth-child(2) > span")).click();
+    driver.findElement(By.cssSelector(".is-plain:nth-child(3) > span")).click();
     Thread.sleep(3000);
     driver.findElement(By.cssSelector(".el-button--primary:nth-child(2)")).click();
     Thread.sleep(5000);    

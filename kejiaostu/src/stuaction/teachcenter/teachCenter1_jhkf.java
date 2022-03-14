@@ -39,6 +39,7 @@ public class teachCenter1_jhkf {
 
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");  
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -90,7 +91,7 @@ public class teachCenter1_jhkf {
     Thread.sleep(3000);
     
     {
-      WebElement element = driver.findElement(By.cssSelector(".el-button--success > span"));
+      WebElement element = driver.findElement(By.cssSelector(".el-dropdown-selfdefine > span"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();          //创建云服务器  悬停
     }

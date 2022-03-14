@@ -32,6 +32,7 @@ import java.net.URL;
 /**
  * 计算中心_自定义。验证 创建、修改、删除
  * 运行脚本前需要准备：学生账号、个人分区及名称、云存储文件路径及名称,各名称要与脚本严格对应
+ * 用户信息：用户/分区/云存储文件路径：  zhsan6/zhsan6/zhsan6
  * @author chain
  *
  */
@@ -44,6 +45,7 @@ public class calCenter_zidingyi {
 
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -57,13 +59,13 @@ public class calCenter_zidingyi {
   
   
   @Test
-  public void mxbs() throws InterruptedException {
+  public void zidingyi() throws InterruptedException {
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(3000);
-    driver.manage().window().setSize(new Dimension(1936, 1056));
+    //driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan6");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -108,7 +110,7 @@ public class calCenter_zidingyi {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(6) .el-select__caret")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan6']")).click();
     Thread.sleep(2000);
     
     //云存储文件路径

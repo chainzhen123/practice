@@ -35,7 +35,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * 系统管理-教学管理-课程管理-课时管理：课时添加、查看、修改、删除.    说明：课时添加时需要指定文件绝对路径
+ * 系统管理-教学管理-课程管理-课时管理：课时添加、查看、修改、删除.    说明：课时添加时需要指定文件绝对路径，代码111行
  * 备注：此处使用 Robot类进行文件上传
  * @author chain
  *
@@ -47,6 +47,7 @@ public class jxmanage2_kecheng {
   
   @BeforeClass
   public void setUp() throws AWTException {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -66,9 +67,9 @@ public class jxmanage2_kecheng {
 	Robot robot = new Robot();
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();
     Thread.sleep(2000);
@@ -109,7 +110,7 @@ public class jxmanage2_kecheng {
     
     //指定PDF文档的路径
     StringSelection selection=new StringSelection("D:\\Paxos Made Simple.pdf");
-    //把图片路径复制到剪切板
+    //把PDF文件路径复制到剪切板
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     System.out.println("selection"+selection);
     

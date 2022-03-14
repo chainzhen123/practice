@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--使用6位用户并发执行计算中心6种任务  -->
+
+<suite thread-count="1" name="存储管理——多功能表操作内容" annotations="JDK" parallel="tests">
+  
+  	  	<!-- 1 -->
+  <test  name="1">
+	   	<parameter name="url" value="http://192.168.1.115:8099/gxzy/"/>
+	   	<parameter name="username" value="changing"/>
+	   	<parameter name="password" value="12345678"/>
+	    <classes>
+	      	<class name="hexinceshi.ziyuangl.StoreMana1_GongNengBiao"/>
+	    </classes>
+  </test>
+  
+    	 <!-- 2 -->
+  <test  name="2">
+	    <parameter name="url" value="http://192.168.1.115:8099/gxzy/"/>
+	   	<parameter name="username" value="changing"/>
+	   	<parameter name="password" value="12345678"/>
+	    <classes>
+	      	<class name="hexinceshi.ziyuangl.StoreMana1_GongNengBiao2"/>
+	    </classes>
+  </test>
+  
+    	  <!-- 3 -->
+  <test  name="3">
+	    <parameter name="url" value="http://192.168.1.115:8099/gxzy/"/>
+	   	<parameter name="username" value="changing"/>
+	   	<parameter name="password" value="12345678"/>
+	    <classes>
+	      	<class name="hexinceshi.ziyuangl.StoreMana1_GongNengBiao3"/>
+	    </classes>
+  </test>
+  
+
+  
+  
+  
+</suite> 

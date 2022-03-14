@@ -47,6 +47,7 @@ public class jxmanage3_jiaoxuelx {
   
   @BeforeClass
   public void setUp() throws AWTException {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -64,9 +65,9 @@ public class jxmanage3_jiaoxuelx {
   public void kechcrede() throws InterruptedException{
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach03");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();
     Thread.sleep(2000);
@@ -76,7 +77,7 @@ public class jxmanage3_jiaoxuelx {
     Thread.sleep(3000);
     
     //创建一级分类
-    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();
+    driver.findElement(By.xpath("//span[text()='创建一级分类']")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-dialog__body .el-input__inner")).click();
     Thread.sleep(2000);

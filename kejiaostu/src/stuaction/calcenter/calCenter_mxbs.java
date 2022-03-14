@@ -32,6 +32,7 @@ import java.net.URL;
 /**
  * 计算中心_模型部署。验证 创建、修改、删除
  * 运行脚本前需要准备：学生账号、个人分区及名称、云存储文件路径及名称,各名称要与脚本严格对应
+ * 用户信息：用户/分区/云存储文件路径：  zhsan3/zhsan3/zhsan3
  * @author chain
  *
  */
@@ -44,6 +45,7 @@ public class calCenter_mxbs {
 
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -60,10 +62,10 @@ public class calCenter_mxbs {
   public void mxbs() throws InterruptedException {
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(3000);
-    driver.manage().window().setSize(new Dimension(1936, 1056));
+    //driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan3");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -112,7 +114,7 @@ public class calCenter_mxbs {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(8) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan3']")).click();
     Thread.sleep(2000);
     
     //文件路径
@@ -145,19 +147,19 @@ public class calCenter_mxbs {
     
     
     //修改
-    driver.findElement(By.xpath("//span[text()='修改']")).click();   
-    Thread.sleep(3000);
-    
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("moxing02");
-    Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='修改']")).click();
-    Thread.sleep(2000);
+//    driver.findElement(By.xpath("//span[text()='修改']")).click();   
+//    Thread.sleep(3000);
+//    
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("moxing02");
+//    Thread.sleep(2000);
+//    driver.findElement(By.xpath("//span[text()='修改']")).click();
+//    Thread.sleep(2000);
     
     //修改模型部署后断言
-    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("moxing02");
-    Assert.assertTrue(res3);
+//    boolean res3 = driver.findElement(By.tagName("body")).getText().contains("moxing02");
+//    Assert.assertTrue(res3);
     
     driver.findElement(By.cssSelector(".el-button--danger > span")).click();  //删除
     Thread.sleep(2000);

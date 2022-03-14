@@ -39,6 +39,7 @@ public class zymanager9_zycz {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -55,11 +56,11 @@ public class zymanager9_zycz {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();    
     Thread.sleep(2000);
@@ -102,6 +103,21 @@ public class zymanager9_zycz {
     //捕获操作之后弹窗弹出的操作成功的文字
     boolean res6 = driver.findElement(By.tagName("body")).getText().contains("存储资源强制清空成功");
     Assert.assertTrue(res6);
+    
+    
+  //删除
+  driver.findElement(By.cssSelector(".el-button--danger > span")).click();
+  Thread.sleep(2000);
+  driver.findElement(By.cssSelector(".el-button--default:nth-child(2)")).click();
+  Thread.sleep(2000);
+  
+  //删除后刷新页面
+  driver.navigate().refresh();   //刷新网页，更新云服务器的运行状态
+  Thread.sleep(3000);
+  
+  //删除后断言
+  boolean res888 = driver.findElement(By.tagName("body")).getText().contains("laoshideketizu");
+  Assert.assertFalse(res888);
     
       
   }

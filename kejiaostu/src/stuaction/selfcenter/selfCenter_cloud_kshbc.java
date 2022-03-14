@@ -35,6 +35,7 @@ public class selfCenter_cloud_kshbc {
  
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -54,7 +55,7 @@ public class selfCenter_cloud_kshbc {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan2");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -98,7 +99,7 @@ public class selfCenter_cloud_kshbc {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(7) .el-input__inner")).click();
     Thread.sleep(2000);    
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan2']")).click();
     Thread.sleep(2000);
     //文件路径
     driver.findElement(By.cssSelector(".is-plain > span")).click();
@@ -132,23 +133,23 @@ public class selfCenter_cloud_kshbc {
     Thread.sleep(5000);
 
     //修改
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  
-    Thread.sleep(3000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).clear();   
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("keshihua02");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();  //提交修改
-    Thread.sleep(5000);
-    
-    
-    driver.navigate().refresh();   //修改完成后刷新网页，更新
-    Thread.sleep(5000);
-    
-    //修改后断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("keshihua02");
-    Assert.assertTrue(res2);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  
+//    Thread.sleep(3000);
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).clear();   
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("keshihua02");
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();  //提交修改
+//    Thread.sleep(5000);
+//    
+//    
+//    driver.navigate().refresh();   //修改完成后刷新网页，更新
+//    Thread.sleep(5000);
+//    
+//    //修改后断言
+//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("keshihua02");
+//    Assert.assertTrue(res2);
         
     //删除
     driver.findElement(By.cssSelector(".is-plain:nth-child(3) > span")).click();

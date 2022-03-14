@@ -27,7 +27,7 @@ import java.net.URL;
 
 /**
  * 教师角色，【教学中心】-【我的学习】-我的课程、我的云服务器
- * 说明：运行脚本前需要该课程创建一个远程连接（novnc类型）
+ * 注意：运行脚本前需要该课程创建一个远程连接（novnc类型）
  * @author chain
  *
  */
@@ -39,6 +39,7 @@ public class teachCenter6_wordxx {
     
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -57,11 +58,11 @@ public class teachCenter6_wordxx {
     driver.manage().window().setSize(new Dimension(1410, 864));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach05");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();
     Thread.sleep(2000);
@@ -78,7 +79,7 @@ public class teachCenter6_wordxx {
     driver.findElement(By.xpath("//span[text()='进入容器']")).click();
     Thread.sleep(2000);
     vars.put("root", driver.getWindowHandle());
-
+    
     driver.switchTo().window(vars.get("root").toString());
     Thread.sleep(2000);
     

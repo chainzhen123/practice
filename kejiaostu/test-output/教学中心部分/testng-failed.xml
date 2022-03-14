@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [教学中心部分]" parallel="tests">
+  <test thread-count="5" name="teach05(failed)" parallel="tests">
+    <parameter name="url" value=""/>
+    <classes>
+      <class name="teacheraction.teachcenter.teachCenter6_wordxx">
+        <methods>
+          <include name="setUp"/>
+          <include name="jx_wordxx"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- teacheraction.teachcenter.teachCenter6_wordxx -->
+    </classes>
+  </test> <!-- teach05(failed) -->
+  <test thread-count="5" name="teach02(failed)" parallel="tests">
+    <parameter name="url" value=""/>
+    <classes>
+      <class name="teacheraction.teachcenter.teachCenter2_yclj">
+        <methods>
+          <include name="tearDown"/>
+          <include name="Test1234"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- teacheraction.teachcenter.teachCenter2_yclj -->
+    </classes>
+  </test> <!-- teach02(failed) -->
+  <test thread-count="5" name="teac01(failed)" parallel="tests">
+    <parameter name="url" value=""/>
+    <classes>
+      <class name="teacheraction.teachcenter.teachCenter1_jhkf">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="Test1234"/>
+        </methods>
+      </class> <!-- teacheraction.teachcenter.teachCenter1_jhkf -->
+    </classes>
+  </test> <!-- teac01(failed) -->
+</suite> <!-- Failed suite [教学中心部分] -->

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--使用6位用户并发执行计算中心6种任务  -->
+
+<suite thread-count="1" name="计算中心6种任务测试" annotations="JDK" parallel="tests">
+  
+  	  	<!-- 1 -->
+  <test  name="zhsan1">
+	   	<parameter name="url" value="http://192.168.1.115:8099/gxzy/"/>
+	   	<parameter name="username" value="zhsan1"/>
+	   	<parameter name="password" value="12345678"/>
+	   	<parameter name="imagename" value="jiaohushi"/>
+	    <classes>
+	      	<class name="stuaction.calcenter.calCenter_jhskf"/>
+	    </classes>
+  </test>
+  
+    	 <!-- 2 -->
+  <test  name="zhsan2">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.calcenter.calCenter_kshbc"/>
+	    </classes>
+  </test>
+  
+    	  <!-- 3 -->
+  <test  name="zhsan3">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.calcenter.calCenter_mxbs"/>
+	    </classes>
+  </test>
+  
+      	  <!-- 4 -->
+  <test  name="zhsan4">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.calcenter.calCenter_xlksh"/>
+	    </classes>
+  </test>
+  
+      	  <!-- 5 -->
+  <test  name="zhsan5">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.calcenter.calCenter_yclj"/>
+	    </classes>
+  </test>
+  
+      	  <!-- 6 -->
+  <test  name="zhsan6">
+	   	<parameter name="url" value=""/>
+	    <classes>
+	      	<class name="stuaction.calcenter.calCenter_zidingyi"/>
+	    </classes>
+  </test>
+  
+  
+  
+</suite> 

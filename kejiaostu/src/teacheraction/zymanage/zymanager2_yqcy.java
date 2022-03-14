@@ -29,6 +29,7 @@ import java.net.URL;
 
 /**
  * 教师用户-资源管理-课题组管理：邀请成员
+ * 脚本注意点：确保邀请的成员在平台中真实存在
  * @author chain
  *
  */
@@ -39,6 +40,7 @@ public class zymanager2_yqcy {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -56,11 +58,11 @@ public class zymanager2_yqcy {
     driver.manage().window().setSize(new Dimension(1550, 838));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();    
     Thread.sleep(2000);
@@ -99,8 +101,8 @@ public class zymanager2_yqcy {
        
     driver.findElement(By.cssSelector(".tableleft .el-input__inner")).click();
     Thread.sleep(2000);
-    //查询账户
-    driver.findElement(By.cssSelector(".tableleft .el-input__inner")).sendKeys("Teacherzhao");
+    //选择分配账户
+    driver.findElement(By.cssSelector(".tableleft .el-input__inner")).sendKeys("teach02");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(2) .el-button > span")).click();
     Thread.sleep(2000);
@@ -140,21 +142,21 @@ public class zymanager2_yqcy {
     driver.navigate().refresh();   //刷新网页，更新云服务器的运行状态
     Thread.sleep(3000);
     
-    {
-        WebElement elementq = driver.findElement(By.cssSelector(".operItem:nth-child(1) span"));
-        Actions builder = new Actions(driver);
-        builder.moveToElement(elementq).perform();
-    }
-    Thread.sleep(3000);
-    
-	driver.findElement(By.xpath("//li[contains(text(),'删除成员')]")).click();
-	Thread.sleep(3000);
-	driver.findElement(By.cssSelector(".el-button--danger:nth-child(1) > span")).click();
-	Thread.sleep(3000);
-	driver.findElement(By.cssSelector(".el-button:nth-child(2) > span")).click();
-	Thread.sleep(3000);
-	driver.findElement(By.cssSelector("#projecttema > .el-dialog__wrapper:nth-child(5) .el-dialog__close")).click();
-	Thread.sleep(5000);
+//    {
+//        WebElement elementq = driver.findElement(By.xpath("//span[text()='成员管理']"));
+//        Actions builder = new Actions(driver);
+//        builder.moveToElement(elementq).perform();
+//    }
+//    Thread.sleep(3000);
+//    
+//	driver.findElement(By.xpath("//li[contains(text(),'删除成员')]")).click();
+//	Thread.sleep(3000);
+//	driver.findElement(By.cssSelector(".el-button--danger:nth-child(1) > span")).click();
+//	Thread.sleep(3000);
+//	driver.findElement(By.cssSelector(".el-button:nth-child(2) > span")).click();
+//	Thread.sleep(3000);
+//	driver.findElement(By.cssSelector("#projecttema > .el-dialog__wrapper:nth-child(5) .el-dialog__close")).click();
+//	Thread.sleep(5000);
 
   }
 }

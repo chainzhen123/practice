@@ -39,6 +39,7 @@ public class calCenter_GL_zidingyi {
   
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -56,7 +57,7 @@ public class calCenter_GL_zidingyi {
     driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan6");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -106,7 +107,7 @@ public class calCenter_GL_zidingyi {
     //个人分区
     driver.findElement(By.cssSelector(".el-form-item:nth-child(6) .el-select__caret")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan6']")).click();
     Thread.sleep(2000);
     
     //云存储文件路径
@@ -140,25 +141,25 @@ public class calCenter_GL_zidingyi {
     Thread.sleep(5000);
     
     //修改
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  //修改    
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();  //清空文本框中的内容
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("zidingyi01");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();
-    Thread.sleep(5000); 
-    
-    driver.navigate().refresh();   //修改完成后刷新网页，更新
-    Thread.sleep(5000);
-    
-    //修改断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("zidingyi01");
-    Assert.assertTrue(res2);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  //修改    
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).click();
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).clear();  //清空文本框中的内容
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form--label-right > .el-form-item:nth-child(1) .el-input__inner")).sendKeys("zidingyi01");
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-button--success:nth-child(1) > span")).click();
+//    Thread.sleep(5000); 
+//    
+//    driver.navigate().refresh();   //修改完成后刷新网页，更新
+//    Thread.sleep(5000);
+//    
+//    //修改断言
+//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("zidingyi01");
+//    Assert.assertTrue(res2);
     
    //删除
-    driver.findElement(By.cssSelector(".el-button--danger:nth-child(3) > span")).click();
+    driver.findElement(By.cssSelector(".is-plain:nth-child(3) > span")).click();
     Thread.sleep(3000);
     driver.findElement(By.cssSelector(".el-button--primary:nth-child(2)")).click();
     Thread.sleep(5000);    

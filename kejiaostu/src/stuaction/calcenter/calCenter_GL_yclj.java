@@ -36,16 +36,20 @@ import java.net.URL;
  * @author chain
  *
  */
+
 public class calCenter_GL_yclj {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+  
   @BeforeClass
   public void setUp() {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+  
   @AfterClass
   public void tearDown() {
     driver.quit();
@@ -58,7 +62,7 @@ public class calCenter_GL_yclj {
     driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan1");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("zhsan5");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).click();
     Thread.sleep(2000);
@@ -100,9 +104,9 @@ public class calCenter_GL_yclj {
     driver.findElement(By.cssSelector(".is-checked > .el-radio__label")).click();
     Thread.sleep(2000);
     //个人分区
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(5) .el-input__inner")).click();
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(7) .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//span[text()='zhsan1']")).click();
+    driver.findElement(By.xpath("//span[text()='zhsan5']")).click();
     Thread.sleep(2000);
     //选择路径
     driver.findElement(By.cssSelector(".el-button--success")).click();
@@ -113,17 +117,17 @@ public class calCenter_GL_yclj {
     Thread.sleep(2000);
     
     //配额
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(9) .el-input__inner")).click();
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(9) .el-input__inner")).sendKeys("1");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(10) .el-input__inner")).click();
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(10) .el-input__inner")).sendKeys("0");
-    Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(11) .el-input__inner")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item:nth-child(11) .el-input__inner")).sendKeys("1");
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(12) .el-input__inner")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(12) .el-input__inner")).sendKeys("0");
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(13) .el-input__inner")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(13) .el-input__inner")).sendKeys("1");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-button--primary:nth-child(1) > span")).click();
     Thread.sleep(5000);
@@ -136,23 +140,23 @@ public class calCenter_GL_yclj {
     Thread.sleep(5000);
 
     //修改
-    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  
-    Thread.sleep(3000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).clear();   
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("remote02");
-    Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-button--primary:nth-child(1) > span")).click();  //提交修改
-    Thread.sleep(5000);
+//    driver.findElement(By.cssSelector(".el-button--warning > span")).click();  
+//    Thread.sleep(3000);
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).click();   //修改云服务器名称
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).clear();   
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("remote02");
+//    Thread.sleep(2000);
+//    driver.findElement(By.cssSelector(".el-button--primary:nth-child(1) > span")).click();  //提交修改
+//    Thread.sleep(5000);
     
     
     driver.navigate().refresh();   //修改完成后刷新网页，更新
     Thread.sleep(5000);
     
     //修改后断言
-    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("remote02");
-    Assert.assertTrue(res2);
+//    boolean res2 = driver.findElement(By.tagName("body")).getText().contains("remote02");
+//    Assert.assertTrue(res2);
     
     //批量删除删除
     driver.findElement(By.cssSelector(".el-table__row .el-checkbox__inner")).click();

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="存储管理——多功能表操作内容" duration-ms="168416" started-at="2022-03-11T05:41:39Z" finished-at="2022-03-11T05:44:28Z">
+    <groups>
+    </groups>
+    <test name="1" duration-ms="79298" started-at="2022-03-11T05:41:39Z" finished-at="2022-03-11T05:42:58Z">
+      <class name="hexinceshi.ziyuangl.StoreMana1_GongNengBiao">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao@7a1ebcd8]" name="setUp" is-config="true" duration-ms="4517" started-at="2022-03-11T05:41:39Z" finished-at="2022-03-11T05:41:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="duoGongNengBiao(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao@7a1ebcd8]" name="duoGongNengBiao" duration-ms="73222" started-at="2022-03-11T05:41:44Z" finished-at="2022-03-11T05:42:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://192.168.1.115:8099/gxzy/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[changing]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duoGongNengBiao -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao@7a1ebcd8]" name="tearDown" is-config="true" duration-ms="1542" started-at="2022-03-11T05:42:57Z" finished-at="2022-03-11T05:42:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- hexinceshi.ziyuangl.StoreMana1_GongNengBiao -->
+    </test> <!-- 1 -->
+    <test name="2" duration-ms="44935" started-at="2022-03-11T05:42:58Z" finished-at="2022-03-11T05:43:43Z">
+      <class name="hexinceshi.ziyuangl.StoreMana1_GongNengBiao2">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao2@436e852b]" name="setUp" is-config="true" duration-ms="3384" started-at="2022-03-11T05:42:58Z" finished-at="2022-03-11T05:43:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="duoGongNengBiao(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao2@436e852b]" name="duoGongNengBiao" duration-ms="39750" started-at="2022-03-11T05:43:02Z" finished-at="2022-03-11T05:43:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://192.168.1.115:8099/gxzy/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[changing]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duoGongNengBiao -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao2@436e852b]" name="tearDown" is-config="true" duration-ms="1801" started-at="2022-03-11T05:43:42Z" finished-at="2022-03-11T05:43:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- hexinceshi.ziyuangl.StoreMana1_GongNengBiao2 -->
+    </test> <!-- 2 -->
+    <test name="3" duration-ms="44167" started-at="2022-03-11T05:43:43Z" finished-at="2022-03-11T05:44:28Z">
+      <class name="hexinceshi.ziyuangl.StoreMana1_GongNengBiao3">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao3@6b57696f]" name="setUp" is-config="true" duration-ms="3339" started-at="2022-03-11T05:43:43Z" finished-at="2022-03-11T05:43:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="duoGongNengBiao(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao3@6b57696f]" name="duoGongNengBiao" duration-ms="39648" started-at="2022-03-11T05:43:47Z" finished-at="2022-03-11T05:44:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://192.168.1.115:8099/gxzy/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[changing]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duoGongNengBiao -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:hexinceshi.ziyuangl.StoreMana1_GongNengBiao3@6b57696f]" name="tearDown" is-config="true" duration-ms="1178" started-at="2022-03-11T05:44:26Z" finished-at="2022-03-11T05:44:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- hexinceshi.ziyuangl.StoreMana1_GongNengBiao3 -->
+    </test> <!-- 3 -->
+  </suite> <!-- 存储管理——多功能表操作内容 -->
+</testng-results>

@@ -46,6 +46,7 @@ public class jxmanage4_kecheng {
   
   @BeforeClass
   public void setUp() throws AWTException {
+	System.setProperty("webdriver.gecko.driver","C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver.exe");
     driver = new FirefoxDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -62,9 +63,9 @@ public class jxmanage4_kecheng {
   public void kechcrede() throws InterruptedException, AWTException {
     driver.get("http://192.168.1.115:8099/gxzy/");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("Teacherzhao");
+    driver.findElement(By.cssSelector(".el-form-item:nth-child(1) .el-input__inner")).sendKeys("teach04");
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("1234567899");
+    driver.findElement(By.cssSelector(".el-input--suffix > .el-input__inner")).sendKeys("12345678");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".cliklogin")).click();
     Thread.sleep(2000);
@@ -72,17 +73,29 @@ public class jxmanage4_kecheng {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-menu-item > span")).click();  //教学管理
     Thread.sleep(2000);
+    
+    //创建课程
+    driver.findElement(By.cssSelector("#coursemanagement > .el-row .el-button:nth-child(2) > span")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-input:nth-child(2) > .el-input__inner")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-input:nth-child(2) > .el-input__inner")).sendKeys("789");
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-dialog__footer:nth-child(3) .el-button--primary > span")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".el-form-item__content:nth-child(1) span")).click();
+    Thread.sleep(2000);
         
     //搜索课程
     driver.findElement(By.cssSelector("#coursemanagement .el-input__inner")).click();
     Thread.sleep(2000);
-    driver.findElement(By.cssSelector("#coursemanagement .el-input__inner")).sendKeys("123");
+    driver.findElement(By.cssSelector("#coursemanagement .el-input__inner")).sendKeys("789");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector("#coursemanagement .header .el-button:nth-child(1) > span")).click();
     Thread.sleep(2000);
     //管理按钮
     driver.findElement(By.cssSelector(".el-button--warning:nth-child(1) > span")).click();
-    Thread.sleep(2000);
+    Thread.sleep(2000);	
     
     //默认计划设置
     driver.findElement(By.id("tab-CourseSetting")).click();
@@ -107,7 +120,7 @@ public class jxmanage4_kecheng {
     Thread.sleep(2000);
     //添加学员
     driver.findElement(By.cssSelector(".el-button--success > span")).click();
-    Thread.sleep(2000);
+    Thread.sleep(5000);
     driver.findElement(By.cssSelector(".el-table__row:nth-child(1) .el-checkbox__inner")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-table__row:nth-child(2) .el-checkbox__inner")).click();
@@ -121,7 +134,7 @@ public class jxmanage4_kecheng {
     Thread.sleep(2000);
     
     //批量删除
-    driver.findElement(By.cssSelector(".has-gutter .el-table_24_column_124 .el-checkbox__inner")).click();
+    driver.findElement(By.cssSelector(".is-leaf .el-checkbox__inner")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".el-form-item__content > .el-button--danger > span")).click();
     Thread.sleep(2000);
